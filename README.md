@@ -27,7 +27,7 @@ What you need:
 Instructions:
 - run the following snippet:
 ```sh
-$ git clone http://github.com/bogdanadnan/ninjarig.git
+$ git clone http://github.com/ninjacoin-master/ninjarig.git
 $ cd ninjarig
 $ mkdir build
 $ cd build
