@@ -173,17 +173,17 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
         case ARGON2:
             switch(variant) {
                 case VARIANT_CHUKWA:
-                    algoEntry = "turtle";
-                    devPool = "trtl.muxdux.com";
+                    algoEntry = "chukwa";
+                    devPool = "pool.turtle.hashvault.pro:5555";
                     devPort = 5555;
-                    devUser = "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618";
+                    devUser = "TRTLuxSQY6qC7JbdduVQyni8MXqcLUw7miGV7pQeUPgS1o2nETFWGyWSWCSbhGGLzi4JNuxQJmcawAQjKvUAm8XiRHs8wMhYYig";
                     devPassword = m_devId;
                     break;
                 case VARIANT_CHUKWA_LITE:
                     algoEntry = "wrkz";
                     devPool = "pool.semipool.com";
                     devPort = 33363;
-                    devUser = "Wrkzir5AUH11gBZQsjw75mFUzQuMPiQgYfvhG9MYjbpHFREHtDqHCLgJohSkA7cfn4GDfP7GzA9A8FXqxngkqnxt3GzvGy6Cbx";
+                    devUser = "WrkzZPPnabTTXQ29JZn4S2HHyrykaKBrsNxoSFeYg8ts5e2nCJMqfVw6KYYSqnYXiQJzBX72y8oYQJ3Eemvyzf821zcTpWNHbt";
                     devPassword = m_devId;
                     break;
             };

@@ -53,8 +53,8 @@ R"===(
     "log-file": null,
     "pools": [
         {
-            "url": "stratum+tcp://trtl.muxdux.com:5555",
-            "user": "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618",
+            "url": "stratum+tcp://pool.turtle.hashvault.pro:5555",
+            "user": "TRTLuxSQY6qC7JbdduVQyni8MXqcLUw7miGV7pQeUPgS1o2nETFWGyWSWCSbhGGLzi4JNuxQJmcawAQjKvUAm8XiRHs8wMhYYig",
             "pass": "x",
             "rig-id": null,
             "nicehash": false,
