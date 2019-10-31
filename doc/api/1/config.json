@@ -1,0 +1,49 @@
+{
+    "algo": "chukwa",
+    "api": {
+        "port": 44444,
+        "access-token": "TOKEN",
+        "worker-id": null,
+        "ipv6": false,
+        "restricted": false
+    },
+    "background": false,
+    "colors": true,
+    "threads": "all",
+    "cpu-affinity": null,
+    "cpu-priority": null,
+    "use-gpu": [ "OPENCL", "CUDA" ],
+    "gpu-intensity": [ 50 ],
+    "gpu-filter": [
+        {
+            "engine": "OPENCL",
+            "filter": "AMD"
+        }
+    ],
+    "donate-level": 5,
+    "log-file": null,
+    "pools": [
+        {
+            "url": "pool.btcm.semipool.com:33309",
+            "user": "WrkzZPPnabTTXQ29JZn4S2HHyrykaKBrsNxoSFeYg8ts5e2nCJMqfVw6KYYSqnYXiQJzBX72y8oYQJ3Eemvyzf821zcTpWNHbt",
+            "pass": "x",
+            "keepalive": false,
+            "nicehash": false,
+            "variant": -1
+        },
+        {
+            "url": "testnet.wrkz.work:5555",
+            "user": "WrkzZPPnabTTXQ29JZn4S2HHyrykaKBrsNxoSFeYg8ts5e2nCJMqfVw6KYYSqnYXiQJzBX72y8oYQJ3Eemvyzf821zcTpWNHbt",
+            "pass": "x",
+            "keepalive": false,
+            "nicehash": false,
+            "variant": -1
+        }
+    ],
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "user-agent": null,
+    "syslog": false,
+    "watch": false
+}

@@ -1,0 +1,61 @@
+{
+    "algo": "chukwa",
+    "api": {
+        "port": 10000,
+        "access-token": null,
+        "id": null,
+        "worker-id": null,
+        "ipv6": false,
+        "restricted": true
+    },
+    "autosave": true,
+    "background": false,
+    "colors": true,
+    "cpu-threads": "all",
+    "cpu-optimization": null,
+    "cpu-affinity": null,
+    "priority": null,
+    "donate-level": 5,
+    "log-file": null,
+    "pools": [
+        {
+            "url": "stratum+tcp://turtlecoin.herominers.com:10380",
+            "user": "TRTLuxcvWQbZWQqRWMruAjiHoa19RBVEwEhDq9Vz2TxD3sjeebi16vkbzwsE5j8ch3Cj9V5CfgWrXKAnxZ8ysLMNRnKxkV9N7Ds",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": false,
+            "variant": "chukwa",
+            "enabled": true,
+            "tls": false,
+            "tls-fingerprint": null
+        }
+    ],
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "user-agent": null,
+    "syslog": false,
+    "watch": true,
+    "use-gpu": [
+        "OPENCL",
+        "CUDA"
+    ],
+    "gpu-intensity": [
+        50.0
+    ],
+    "gpu-filter": [
+        {
+            "engine": "OPENCL",
+            "filter": "AMD"
+        },
+        {
+            "engine": "OPENCL",
+            "filter": "Radeon"
+        },
+        {
+            "engine": "OPENCL",
+            "filter": "Advanced Micro Devices"
+        }
+    ]
+}
