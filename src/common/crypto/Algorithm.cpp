@@ -52,13 +52,13 @@ struct AlgoData
 
 
 static AlgoData const algorithms[] = {
-	{ "argon2id/ninja",         "ninjacoin",      xmrig::ARGON2,          xmrig::VARIANT_NINJA },
-	{ "ninja",                  "ninjacoin",      xmrig::ARGON2,          xmrig::VARIANT_NINJA },
     { "chukwa",                 "trtl-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA },
     { "argon2/chukwa",          "trtl-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA },
     { "argon2/trtl",            "trtl-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA },
-    { "chukwa/wrkz",            "wrkz-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
-    { "argon2/wrkz",            "wrkz-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
+    { "ninja",                  "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
+    { "argon2/ninja",           "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
+	{ "argon2id/ninja",         "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
+    { "ninjacoin",              "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
 };
 
 
@@ -87,7 +87,7 @@ static AlgoData const xmrStakAlgorithms[] = {
 
 static const char *variants[] = {
     "chukwa",
-    "wrkz",
+    "ninja",
 };
 
 

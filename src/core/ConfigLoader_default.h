@@ -49,7 +49,7 @@ R"===(
     "cpu-optimization": null,
     "cpu-affinity": null,
     "priority": null,
-    "donate-level": 5,
+    "donate-level": 1,
     "log-file": null,
     "pools": [
         {

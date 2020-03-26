@@ -97,7 +97,8 @@ $ make
 ### Options
 ```
   -a, --algo=ALGO          specify the algorithm to use
-                             ninja
+                             chukwa
+							 ninja
                              argon2id/ninja
   -o, --url=URL            URL of mining server
   -O, --userpass=U:P       username:password pair for mining server
@@ -141,4 +142,4 @@ Also you can use configuration via config file, default name **config.json**.
 
 ## Other information
 * No HTTP support, only stratum protocol support.
-* Default donation 5% (5 minutes in 100 minutes) can be reduced to 1% via option `donate-level`.
+* Default donation 1% (5 minutes in 100 minutes) can be reduced to 1% via option `donate-level`.

@@ -23,16 +23,11 @@ namespace xmrig
     constexpr const size_t    ARGON2_ITERS_CHUKWA             = 3;
     constexpr const size_t    ARGON2_PARALLELISM_CHUKWA       = 1;
 
-    constexpr const size_t    ARGON2_MEMORY_CHUKWA_LITE       = 256;
+    constexpr const size_t    ARGON2_MEMORY_CHUKWA_LITE       = 128;
     constexpr const size_t    ARGON2_ITERS_CHUKWA_LITE        = 4;
     constexpr const size_t    ARGON2_PARALLELISM_CHUKWA_LITE  = 1;
-	
-	constexpr const size_t    ARGON2_MEMORY_NINJA             = 128;
-    constexpr const size_t    ARGON2_ITERS_NINJA              = 4;
-    constexpr const size_t    ARGON2_PARALLELISM_NINJA        = 1;
 
     constexpr const int       ARGON2_ALGO_CHUKWA              = Argon2Algo::ID;
-	constexpr const int       ARGON2_ALGO_NINJA               = Argon2Algo::ID;
 
     inline int argon2_select_algo(Variant variant)
     {
@@ -42,8 +37,6 @@ namespace xmrig
                 return ARGON2_ALGO_CHUKWA;
             case VARIANT_CHUKWA_LITE:
                 return ARGON2_ALGO_CHUKWA;
-			case VARIANT_NINJA:
-                return ARGON2_ALGO_NINJA;
         }
 
         return 0;
