@@ -179,6 +179,9 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
                 case VARIANT_CHUKWA_LITE:
                     algoEntry = "wrkz";
                     break;
+				case VARIANT_NINJA:
+                    algoEntry = "ninja";
+                    break;
             };
             break;
     }

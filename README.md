@@ -91,14 +91,14 @@ $ make
 **!!! In some cases (mostly on Windows) the miner doesn't properly detect AVX2 optimization for CPU. If AVX2 doesn't appear in optimization features list for CPU at miner startup, please verify on google if your CPU model has it. If it does have AVX2 support, please run it with "--cpu-optimization AVX2" option. This will give a serious boost to hash rate speed so it does worth the effort to check. !!!**
 
 ```sh
-       ninjarig -a chukwa -o stratum+tcp://<pool_address>:<pool_port> -u <username> -p <password> -t <cpu_threads> --use-gpu <OPENCL,CUDA> --gpu-filter <filters like: OPENCL:AMD,CUDA:1070> --gpu-intensity <intensity from 1-100>
+       ninjarig -a ninja -o stratum+tcp://<pool_address>:<pool_port> -u <username> -p <password> -t <cpu_threads> --use-gpu <OPENCL,CUDA> --gpu-filter <filters like: OPENCL:AMD,CUDA:1070> --gpu-intensity <intensity from 1-100>
 ```
 
 ### Options
 ```
   -a, --algo=ALGO          specify the algorithm to use
-                             chukwa
-                             chukwa/wrkz
+                             ninja
+                             argon2id/ninja
   -o, --url=URL            URL of mining server
   -O, --userpass=U:P       username:password pair for mining server
   -u, --user=USERNAME      username for mining server

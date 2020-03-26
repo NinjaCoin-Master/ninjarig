@@ -124,6 +124,8 @@ Argon2Profile *Hasher::getArgon2Profile(xmrig::Algo algorithm, xmrig::Variant va
                 return &argon2profile_3_1_512;
             case xmrig::VARIANT_CHUKWA_LITE:
                 return &argon2profile_4_1_256;
+		   case xmrig::VARIANT_NINJA:
+                return &argon2profile_4_1_128;
             default:
                 return nullptr;
         }

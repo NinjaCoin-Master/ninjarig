@@ -403,6 +403,7 @@ void xmrig::Pool::rebuild()
 #   ifndef XMRIG_PROXY_PROJECT
     addVariant(VARIANT_AUTO);
     addVariant(VARIANT_CHUKWA);
+	addVariant(VARIANT_NINJA);
     addVariant(VARIANT_CHUKWA_LITE);
 #   endif
 }
