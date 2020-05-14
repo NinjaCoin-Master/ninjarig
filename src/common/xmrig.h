@@ -37,7 +37,7 @@ enum Algo {
 enum Variant {
     VARIANT_AUTO   = -1, // Autodetect
     VARIANT_CHUKWA = 0, // Argon2 Chukwa for TurtleCoin
-    VARIANT_CHUKWA_LITE = 1, // Argon2 Chukwa Lite for WrkzCoin
+    VARIANT_CHUKWA_LITE = 1, // Argon2 Ninja for NinjaCoin
     VARIANT_MAX
 };
 

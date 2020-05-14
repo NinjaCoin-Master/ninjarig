@@ -36,8 +36,7 @@ static char const usage[] = "\
 Usage: " APP_ID " [OPTIONS]\n\
 Options:\n\
   -a, --algo=ALGO          specify the algorithm to use\n\
-                                   chukwa\n\
-                                   chukwa/wrkz\n\
+                                   ninja\n\
   -o, --url=URL            URL of mining server\n\
   -O, --userpass=U:P       username:password pair for mining server\n\
   -u, --user=USERNAME      username for mining server\n\

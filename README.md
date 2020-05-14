@@ -1,4 +1,4 @@
-# NinjaRig v1.0
+# NinjaRig v1.1.0
 ### Argon2 miner for CPU and GPU
 
 ## Dev Fee
@@ -12,7 +12,7 @@ In order to support development, this miner has 1-5% configurable dev fee - 1-5 
 ## Releases
 There are binaries compiled for Windows 10 and Linux/HiveOS. Just pick the one matching your OS and skip to usage information. If for some reason the binaries don't work for you or you want the cutting edge version of this software you can try building it yourself using below instructions (build instructions are only provided for Ubuntu, you will need to adapt them accordingly for other distribution).
 You can get the binaries from here:
-https://github.com/bogdanadnan/ninjarig/releases
+https://github.com/turtlecoin/ninjarig/releases
 
 ## Build it yourself - Linux
 What you need:
@@ -36,7 +36,7 @@ $ export CC=gcc-8
 $ export CXX=g++-8
 
 # Clone Repository
-$ git clone http://github.com/bogdanadnan/ninjarig.git && cd ninjarig
+$ git clone https://github.com/turtlecoin/ninjarig.git && cd ninjarig
 
 # Make Build Repository
 $ mkdir build && cd build
@@ -66,16 +66,16 @@ So, if you really really really want to do that, these are the basic steps you w
 - install NVidia CUDA Toolkit (https://developer.nvidia.com/cuda-downloads)
 - search for binaries or compile yourself the following libraries: OpenSSL (https://wiki.openssl.org/index.php/Binaries), libuv (https://github.com/libuv/libuv & https://github.com/WenbinHou/libuv-prebuilt) and microhttpd (https://www.gnu.org/software/libmicrohttpd/). If you don't need TLS and API support, you can ignore OpenSSL and microhttpd dependencies but libuv is mandatory. For each you will need the DLL file, the .LIB - for Visual Studio (not the .A! - for MinGW/gcc) file and the headers. Find the place where Visual Studio has installed the SDK and copy those files in the appropriate lib/include folders. The DLLs will be needed in the final compilation folder.
 - create a folder named ninja somewhere on your drive and add 2 subfolders in it, one named build_clang and another build_vc
-- now comes the fun part. In the Windows Run menu type "vs" - it should find some BAT files installed by Visual Studio with all the paths setup for compilation. Open the one with X64 in the name.
+- now comes the fun part. In the Windows Run menu type "x64 Native Tools Command Prompt" (https://docs.microsoft.com/en-us/cpp/build/building-on-the-command-line?view=vs-2019) - and open x64 build console.
 - test that all dependencies work. You should be able to run in console clang-cl --version, make --version, cmake --version and git --version and get results. 
 - in the CMD window opened, navigate to ninja folder.
 - type the following commands:
 ```sh
-$ git clone http://github.com/bogdanadnan/ninjarig.git
+$ git clone https://github.com/turtlecoin/ninjarig.git
 $ cd build_clang
 $ set CC=clang-cl
 $ set CXX=clang-cl
-$ cmake ../ninjarig -DCMAKE_BUILD_TYPE=Release -WITH_CUDA=OFF -G "MinGW Makefiles"
+$ cmake ../ninjarig -DCMAKE_BUILD_TYPE=Release -DWITH_CUDA=OFF -G "MinGW Makefiles"
 $ cd ../build_vc
 $ cmake ../ninjarig -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 15 2017 Win64"
 $ cd ../build_clang
@@ -91,14 +91,14 @@ $ make
 **!!! In some cases (mostly on Windows) the miner doesn't properly detect AVX2 optimization for CPU. If AVX2 doesn't appear in optimization features list for CPU at miner startup, please verify on google if your CPU model has it. If it does have AVX2 support, please run it with "--cpu-optimization AVX2" option. This will give a serious boost to hash rate speed so it does worth the effort to check. !!!**
 
 ```sh
-       ninjarig -a chukwa -o stratum+tcp://<pool_address>:<pool_port> -u <username> -p <password> -t <cpu_threads> --use-gpu <OPENCL,CUDA> --gpu-filter <filters like: OPENCL:AMD,CUDA:1070> --gpu-intensity <intensity from 1-100>
+       ninjarig -a ninja -o stratum+tcp://<pool_address>:<pool_port> -u <username> -p <password> -t <cpu_threads> --use-gpu <OPENCL,CUDA> --gpu-filter <filters like: OPENCL:AMD,CUDA:1070> --gpu-intensity <intensity from 1-100>
 ```
 
 ### Options
 ```
   -a, --algo=ALGO          specify the algorithm to use
-                             chukwa
-                             chukwa/wrkz
+                             ninja
+                             chukwa (for turtlecoin)
   -o, --url=URL            URL of mining server
   -O, --userpass=U:P       username:password pair for mining server
   -u, --user=USERNAME      username for mining server

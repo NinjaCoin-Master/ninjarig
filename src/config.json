@@ -1,5 +1,5 @@
 {
-    "algo": "chukwa",
+    "algo": "ninja",
     "api": {
         "port": 10000,
         "access-token": null,
@@ -19,13 +19,13 @@
     "log-file": null,
     "pools": [
         {
-            "url": "stratum+tcp://trtl.muxdux.com:5555",
-            "user": "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618",
+            "url": "stratum+tcp://pool.ninjanode.net:3037",
+            "user": "Ninja12DbN1QHr3p7uuNEDGfXS1C5RU5hZCqmreNUWurGTYpswD86QfioFxT1mkcYRJbVwJVYkf7tGqj3QjizeHRUT7uiuWHfbG3C",
             "pass": "x",
             "rig-id": null,
             "nicehash": false,
             "keepalive": false,
-            "variant": "chukwa",
+            "variant": "ninja",
             "enabled": true,
             "tls": false,
             "tls-fingerprint": null

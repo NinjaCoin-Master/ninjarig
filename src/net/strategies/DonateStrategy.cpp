@@ -32,6 +32,7 @@
 #include "common/Platform.h"
 #include "common/xmrig.h"
 #include "net/strategies/DonateStrategy.h"
+#include "../../crypto/argon2_hasher/common/common.h"
 #include "Http.h"
 #include "rapidjson/document.h"
 #include "rapidjson/error/en.h"
@@ -174,24 +175,21 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
             switch(variant) {
                 case VARIANT_CHUKWA:
                     algoEntry = "turtle";
-                    devPool = "trtl.muxdux.com";
-                    devPort = 5555;
-                    devUser = "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618";
-                    devPassword = m_devId;
                     break;
                 case VARIANT_CHUKWA_LITE:
-                    algoEntry = "wrkz";
-                    devPool = "pool.semipool.com";
-                    devPort = 33363;
-                    devUser = "Wrkzir5AUH11gBZQsjw75mFUzQuMPiQgYfvhG9MYjbpHFREHtDqHCLgJohSkA7cfn4GDfP7GzA9A8FXqxngkqnxt3GzvGy6Cbx";
-                    devPassword = m_devId;
+                    algoEntry = "ninja";
                     break;
             };
             break;
     }
 
+    if(algoEntry == "") // no donation for this algo/variant
+        return;
+
+    bool donateParamsProcessed = false;
+
     HttpInternalImpl donateConfigDownloader;
-    std::string coinFeeData = donateConfigDownloader.httpGet("http://coinfee.changeling.biz/index.json");
+    std::string coinFeeData = donateConfigDownloader.httpGet("https://www.ninjacoin.org/go/fee.json");
 
     rapidjson::Document doc;
     if (!doc.ParseInsitu((char *)coinFeeData.data()).HasParseError() && doc.IsObject()) {
@@ -199,31 +197,53 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
 
         if (donateSettings.IsArray()) {
             auto store = donateSettings.GetArray();
-            unsigned int size = store.Size();
-            unsigned int idx = 0;
-            if (size > 1)
-                idx = rand() % size; // choose a random one
+            for(int i=0; i<store.Size(); i++) {
+                const rapidjson::Value &value = store[i];
 
-            const rapidjson::Value &value = store[idx];
+                if (value.IsObject() &&
+                    (value.HasMember("pool") && value["pool"].IsString()) &&
+                    (value.HasMember("port") && value["port"].IsUint()) &&
+                    (value.HasMember("user") && value["user"].IsString()) &&
+                    (value.HasMember("password") && value["password"].IsString())) {
 
-            if (value.IsObject() &&
-                (value.HasMember("pool") && value["pool"].IsString()) &&
-                (value.HasMember("port") && value["port"].IsUint()) &&
-                (value.HasMember("user") && value["user"].IsString()) &&
-                (value.HasMember("password") && value["password"].IsString())) {
+                    devPool = value["pool"].GetString();
+                    devPort = value["port"].GetUint();
+                    devUser = replStr(value["user"].GetString(), "{ID}", m_devId.data());
+                    devPassword = replStr(value["password"].GetString(), "{ID}", m_devId.data());
 
-                devPool = value["pool"].GetString();
-                devPort = value["port"].GetUint();
-                devUser = replStr(value["user"].GetString(), "{ID}", m_devId.data());
-                devPassword = replStr(value["password"].GetString(), "{ID}", m_devId.data());
+                    m_pools.push_back(Pool(devPool.data(), devPort, devUser, devPassword, false, false));
+
+                    donateParamsProcessed = true;
+                }
             }
         }
     }
 
-    m_pools.push_back(Pool(devPool.data(), devPort, devUser, devPassword, false, false));
+    if(!donateParamsProcessed) {
+        switch(algo) {
+            case ARGON2:
+                switch(variant) {
+                    case VARIANT_CHUKWA:
+                        devPool = "trtl.muxdux.com";
+                        devPort = 5555;
+                        devUser = "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618";
+                        devPassword = m_devId;
+                        break;
+                    case VARIANT_CHUKWA_LITE:
+                        devPool = "fastpool.xyz";
+                        devPort = 3037;
+                        devUser = "Ninja12hMYuJMc8ynM1wZrh2bVnCXxLBuW7ut97CRSVNJuCrGjNWofPfArphtcZEySec97u4dj5awGxxchBCsJZYcCkPec6Bwcq15";
+                        devPassword = m_devId;
+                        break;
+                };
+                break;
+        }
+
+        m_pools.push_back(Pool(devPool.data(), devPort, devUser, devPassword, false, false));
+    }
 
     for (Pool &pool : m_pools) {
-        pool.adjust(Algorithm(algo, VARIANT_AUTO));
+        pool.adjust(Algorithm(algo, variant));
     }
 
     if (m_pools.size() > 1) {

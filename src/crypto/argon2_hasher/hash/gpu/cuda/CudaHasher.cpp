@@ -53,6 +53,8 @@ bool CudaHasher::initialize(xmrig::Algo algorithm, xmrig::Variant variant) {
 }
 
 vector<CudaDeviceInfo *> CudaHasher::queryCudaDevices(cudaError_t &error, string &error_message) {
+    cudaSetDeviceFlags(cudaDeviceBlockingSync);
+
 	vector<CudaDeviceInfo *> devices;
 	int devCount = 0;
 	error = cudaGetDeviceCount(&devCount);
@@ -274,6 +276,7 @@ bool CudaHasher::buildThreadData() {
             thread_data.threadId = threadId;
 
             cudaStream_t stream;
+            cudaSetDevice(device->cudaIndex);		
             device->error = cudaStreamCreate(&stream);
             if(device->error != cudaSuccess) {
                 LOG("Error running kernel: (" + to_string(device->error) + ") cannot create cuda stream.");

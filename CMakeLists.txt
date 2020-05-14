@@ -8,6 +8,8 @@ option(WITH_TLS             "Enable OpenSSL support" ON)
 option(WITH_EMBEDDED_CONFIG "Enable internal embedded JSON config" OFF)
 option(WITH_CUDA            "Enable CUDA support" ON)
 option(WITH_OPENCL          "Enable OpenCL support" ON)
+option(WITH_OPENCL_DOUBLE_THREADS  "Enable dual threads for OpenCL jobs" OFF)
+option(WITH_CUDA_DOUBLE_THREADS  "Enable dual threads for CUDA jobs" ON)
 
 include (CheckIncludeFile)
 include (cmake/cpu.cmake)
@@ -373,6 +375,9 @@ endif(ARCH STREQUAL "arm" OR ARCH STREQUAL "aarch64")
 if(WITH_OPENCL)
     add_definitions(-DWITH_OPENCL)
     find_package(OpenCL REQUIRED)
+    if(WITH_OPENCL_DOUBLE_THREADS)
+        add_definitions(-DPARALLEL_OPENCL)
+    endif()
     include_directories(${OpenCL_INCLUDE_DIR})
     add_library(opencl_hasher MODULE ${SOURCE_OPENCL_HASHER})
     set_target_properties(opencl_hasher
@@ -388,13 +393,19 @@ endif()
 if(WITH_CUDA)
     add_definitions(-DWITH_CUDA)
     find_package(CUDA REQUIRED)
-    if(NOT WIN32)
+    if(WITH_CUDA_DOUBLE_THREADS)
         add_definitions(-DPARALLEL_CUDA)
     endif()
     set(
             CUDA_NVCC_FLAGS
             ${CUDA_NVCC_FLAGS};
-            -O3 -arch=compute_35 -std=c++11
+            -O3 -std=c++11 --ptxas-options=-v
+            -gencode=arch=compute_75,code="sm_75,compute_75"
+            -gencode=arch=compute_61,code="sm_61,compute_61"
+            -gencode=arch=compute_52,code="sm_52,compute_52"
+            -gencode=arch=compute_50,code="sm_50,compute_50"
+            -gencode=arch=compute_35,code="sm_35,compute_35"
+            -gencode=arch=compute_30,code="sm_30,compute_30"
     )
     cuda_add_library(cuda_hasher MODULE ${SOURCE_CUDA_HASHER})
     set_target_properties(cuda_hasher
