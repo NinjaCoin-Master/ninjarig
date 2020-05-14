@@ -49,12 +49,12 @@ R"===(
     "cpu-optimization": null,
     "cpu-affinity": null,
     "priority": null,
-    "donate-level": 1,
+    "donate-level": 5,
     "log-file": null,
     "pools": [
         {
-            "url": "stratum+tcp://turtlecoin.herominers.com:10380",
-            "user": "TRTLuxcvWQbZWQqRWMruAjiHoa19RBVEwEhDq9Vz2TxD3sjeebi16vkbzwsE5j8ch3Cj9V5CfgWrXKAnxZ8ysLMNRnKxkV9N7Ds",
+            "url": "stratum+tcp://trtl.muxdux.com:5555",
+            "user": "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618",
             "pass": "x",
             "rig-id": null,
             "nicehash": false,

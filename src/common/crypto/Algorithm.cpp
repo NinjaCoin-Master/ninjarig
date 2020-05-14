@@ -55,10 +55,8 @@ static AlgoData const algorithms[] = {
     { "chukwa",                 "trtl-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA },
     { "argon2/chukwa",          "trtl-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA },
     { "argon2/trtl",            "trtl-chukwa",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA },
-    { "ninja",                  "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
-    { "argon2/ninja",           "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
-	{ "argon2id/ninja",         "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
-    { "ninjacoin",              "argon2id/ninja",      xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
+    { "argon2/ninja",            "ninja",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
+    { "argon2/ninja",            "ninja",    xmrig::ARGON2,          xmrig::VARIANT_CHUKWA_LITE },
 };
 
 

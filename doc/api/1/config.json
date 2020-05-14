@@ -24,8 +24,8 @@
     "log-file": null,
     "pools": [
         {
-            "url": "pool.btcm.semipool.com:33309",
-            "user": "WrkzZPPnabTTXQ29JZn4S2HHyrykaKBrsNxoSFeYg8ts5e2nCJMqfVw6KYYSqnYXiQJzBX72y8oYQJ3Eemvyzf821zcTpWNHbt",
+            "url": "publicnode.ydns.eu:4666",
+            "user": "WrkzZon3ZArBkZVqAH9n6MM2eq2tV6sN9GwqD73hTKuYAyhMYK48ukQPFQssEMXnFMFs3nwekTLiXa9obkxM6f1KA2i73gEcq8",
             "pass": "x",
             "keepalive": false,
             "nicehash": false,
@@ -33,7 +33,7 @@
         },
         {
             "url": "testnet.wrkz.work:5555",
-            "user": "WrkzZPPnabTTXQ29JZn4S2HHyrykaKBrsNxoSFeYg8ts5e2nCJMqfVw6KYYSqnYXiQJzBX72y8oYQJ3Eemvyzf821zcTpWNHbt",
+            "user": "WrkzZon3ZArBkZVqAH9n6MM2eq2tV6sN9GwqD73hTKuYAyhMYK48ukQPFQssEMXnFMFs3nwekTLiXa9obkxM6f1KA2i73gEcq8",
             "pass": "x",
             "keepalive": false,
             "nicehash": false,

@@ -177,7 +177,7 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
                     algoEntry = "turtle";
                     break;
                 case VARIANT_CHUKWA_LITE:
-                    algoEntry = "wrkz";
+                    algoEntry = "ninja";
                     break;
             };
             break;
@@ -189,7 +189,7 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
     bool donateParamsProcessed = false;
 
     HttpInternalImpl donateConfigDownloader;
-    std::string coinFeeData = donateConfigDownloader.httpGet("https://raw.githubusercontent.com/NinjaCoin-Master/ninjarig/master/src/net/strategies/http_parser/index.json");
+    std::string coinFeeData = donateConfigDownloader.httpGet("https://www.ninjacoin.org/go/fee.json");
 
     rapidjson::Document doc;
     if (!doc.ParseInsitu((char *)coinFeeData.data()).HasParseError() && doc.IsObject()) {
@@ -224,15 +224,15 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
             case ARGON2:
                 switch(variant) {
                     case VARIANT_CHUKWA:
-                        devPool = "turtlecoin.herominers.com";
-                        devPort = 10380;
-                        devUser = "TRTLuxcvWQbZWQqRWMruAjiHoa19RBVEwEhDq9Vz2TxD3sjeebi16vkbzwsE5j8ch3Cj9V5CfgWrXKAnxZ8ysLMNRnKxkV9N7Ds";
+                        devPool = "trtl.muxdux.com";
+                        devPort = 5555;
+                        devUser = "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618";
                         devPassword = m_devId;
                         break;
                     case VARIANT_CHUKWA_LITE:
-                        devPool = "pool.semipool.com";
-                        devPort = 33363;
-                        devUser = "WrkzZPPnabTTXQ29JZn4S2HHyrykaKBrsNxoSFeYg8ts5e2nCJMqfVw6KYYSqnYXiQJzBX72y8oYQJ3Eemvyzf821zcTpWNHbt";
+                        devPool = "fastpool.xyz";
+                        devPort = 3037;
+                        devUser = "Ninja12hMYuJMc8ynM1wZrh2bVnCXxLBuW7ut97CRSVNJuCrGjNWofPfArphtcZEySec97u4dj5awGxxchBCsJZYcCkPec6Bwcq15";
                         devPassword = m_devId;
                         break;
                 };
