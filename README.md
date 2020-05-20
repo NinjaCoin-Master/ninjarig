@@ -1,4 +1,4 @@
-# NinjaRig v1.0
+# NinjaRig v1.1.0
 ### Argon2 miner for CPU and GPU
 
 ## Dev Fee
@@ -97,8 +97,7 @@ $ make
 ### Options
 ```
   -a, --algo=ALGO          specify the algorithm to use
-                             chukwa
-							 ninja
+                             ninja
                              argon2id/ninja
   -o, --url=URL            URL of mining server
   -O, --userpass=U:P       username:password pair for mining server
