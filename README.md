@@ -99,7 +99,6 @@ $ make
 ```
   -a, --algo=ALGO          specify the algorithm to use
                              ninja
-<<<<<<< HEAD
                              chukwa
 =======
                              argon2id/ninja
