@@ -23,7 +23,7 @@ namespace xmrig
     constexpr const size_t    ARGON2_ITERS_CHUKWA             = 3;
     constexpr const size_t    ARGON2_PARALLELISM_CHUKWA       = 1;
 
-    constexpr const size_t    ARGON2_MEMORY_CHUKWA_LITE       = 128;
+    constexpr const size_t    ARGON2_MEMORY_CHUKWA_LITE       = 256;
     constexpr const size_t    ARGON2_ITERS_CHUKWA_LITE        = 4;
     constexpr const size_t    ARGON2_PARALLELISM_CHUKWA_LITE  = 1;
 

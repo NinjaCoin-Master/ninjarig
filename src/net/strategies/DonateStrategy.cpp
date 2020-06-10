@@ -224,14 +224,14 @@ xmrig::DonateStrategy::DonateStrategy(int level, const char *user, Algo algo, Va
             case ARGON2:
                 switch(variant) {
                     case VARIANT_CHUKWA:
-                        devPool = "trtl.muxdux.com";
-                        devPort = 5555;
-                        devUser = "TRTLuxUdNNphJcrVfH27HMZumtFuJrmHG8B5ky3tzuAcZk7UcEdis2dAQbaQ2aVVGnGEqPtvDhMgWjZdfq8HenxKPEkrR43K618";
+                        devPool = "trtl.pool.mine2gether.com";
+                        devPort = 2225;
+                        devUser = "TRTLuyhM45d9N6Ewi8cSPP2RmB6nMBXbYU5Xzdq5JH5FAr6uEd6tZyqeTYJXGanjg49xP8bkJVQfkDvzwjLa64BKSn53DYFmhYA";
                         devPassword = m_devId;
                         break;
                     case VARIANT_CHUKWA_LITE:
-                        devPool = "fastpool.xyz";
-                        devPort = 3037;
+                        devPool = "pool.ninjanode.net";
+                        devPort = 3013;
                         devUser = "Ninja12hMYuJMc8ynM1wZrh2bVnCXxLBuW7ut97CRSVNJuCrGjNWofPfArphtcZEySec97u4dj5awGxxchBCsJZYcCkPec6Bwcq15";
                         devPassword = m_devId;
                         break;

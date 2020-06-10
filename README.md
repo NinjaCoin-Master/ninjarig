@@ -1,4 +1,4 @@
-# NinjaRig v1.0
+# NinjaRig v1.2.0
 ### Argon2 miner for CPU and GPU
 
 ## Dev Fee
@@ -12,7 +12,7 @@ In order to support development, this miner has 1-5% configurable dev fee - 1-5 
 ## Releases
 There are binaries compiled for Windows 10 and Linux/HiveOS. Just pick the one matching your OS and skip to usage information. If for some reason the binaries don't work for you or you want the cutting edge version of this software you can try building it yourself using below instructions (build instructions are only provided for Ubuntu, you will need to adapt them accordingly for other distribution).
 You can get the binaries from here:
-https://github.com/turtlecoin/ninjarig/releases
+https://github.com/ninjacoin-master/ninjarig/releases
 
 ## Build it yourself - Linux
 What you need:
@@ -36,7 +36,7 @@ $ export CC=gcc-8
 $ export CXX=g++-8
 
 # Clone Repository
-$ git clone https://github.com/turtlecoin/ninjarig.git && cd ninjarig
+$ git clone https://github.com/ninjacoin-master/ninjarig.git && cd ninjarig
 
 # Make Build Repository
 $ mkdir build && cd build
@@ -97,9 +97,8 @@ $ make
 ### Options
 ```
   -a, --algo=ALGO          specify the algorithm to use
+                             ninja
                              chukwa
-							 ninja
-                             argon2id/ninja
   -o, --url=URL            URL of mining server
   -O, --userpass=U:P       username:password pair for mining server
   -u, --user=USERNAME      username for mining server
