@@ -36,7 +36,7 @@ $ export CC=gcc-8
 $ export CXX=g++-8
 
 # Clone Repository
-$ git clone https://github.com/turtlecoin/ninjarig.git && cd ninjarig
+$ git clone https://github.com/ninjacoin-master/ninjarig.git && cd ninjarig
 
 # Make Build Repository
 $ mkdir build && cd build
@@ -71,7 +71,7 @@ So, if you really really really want to do that, these are the basic steps you w
 - in the CMD window opened, navigate to ninja folder.
 - type the following commands:
 ```sh
-$ git clone https://github.com/turtlecoin/ninjarig.git
+$ git clone https://github.com/ninjacoin-master/ninjarig.git
 $ cd build_clang
 $ set CC=clang-cl
 $ set CXX=clang-cl
