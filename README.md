@@ -1,5 +1,5 @@
 # NinjaRig v1.2.0
-### Argon2 miner for CPU and GPU
+### NinjaRig Argon2 miner for CPU and GPU
 
 ## Dev Fee
 In order to support development, this miner has 1-5% configurable dev fee - 1-5 minutes from 100 minutes it will mine for developer. Mining settings are downloaded from http://coinfee.changeling.biz/index.json at startup.
